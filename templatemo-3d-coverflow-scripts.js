@@ -45,31 +45,31 @@ https://templatemo.com/tm-595-3d-coverflow
         const imageData = [
             {
                 title: "Genre Wuxia",
-                description: "Drama yang berfokus pada seni bela diri"
+                description: "Ilmu Bela Diri, Kode Etik (Jianghu), Balas Dendam"
             },
             {
                 title: "Genre Romansa Modern",
-                description: "Drama yang berfokus pada kisah cinta manis, konflik realistis, dan perkembangan karakter di kkehidupan masa kini"
+                description: "Kehidupan Kota, CEO, Hubungan Dewasa"
             },
             {
                 title: "Genre Sejarah",
-                description: "Drama yang berfokus pada kehidupan istana, konflik dinasti, perebutan takhta, dan romansa kolosal"
+                description: "Intrik Istana, Perebutan Tahta, Tradisi"
             },
             {
                 title: "Genre Sekolah/Remaja",
-                description: "Serial romansa-komedi yang berfokus pada kehidupan siswa SMA/universitas, persahabatan, cinta pertama, dan perjuangan akademik"
+                description: "Sekolah/Kuliah, Persahabatan, Cinta Remaja"
             },
             {
                 title: "Genre E-Sport",
-                description: "Drama yang berfokus pada dunia kompetitif game online"
+                description: "Kompetisi Game, Kerja Tim, Impian"
             },
             {
                 title: "Genre Era Republik",
-                description: "Serial yang berlatar belakang sejarah Tiongkok antara tahun 1912-1949"
+                description: "Militer, Busana Cheongsam, Perubahan Sosial"
             },
             {
                 title: "Genre Xianxia",
-                description: "Drama fantasi kultivasi atau drama dewa-dewi Tiongkok"
+                description: "Reinkarnasi, Kultivasi, Dunia Dewa-Iblis"
             }
         ];
 
