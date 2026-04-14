@@ -45,7 +45,7 @@ https://templatemo.com/tm-595-3d-coverflow
         const imageData = [
             {
                 title: "Genre Wuxia",
-                description: "Fokus pada seni bela diri"
+                description: "Drama yang berfokus pada seni bela diri"
             },
             {
                 title: "Forest Path",
