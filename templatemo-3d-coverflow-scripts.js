@@ -49,27 +49,27 @@ https://templatemo.com/tm-595-3d-coverflow
             },
             {
                 title: "Genre Romansa Modern",
-                description: "A winding trail through ancient woodland"
+                description: "Drama yang berfokus pada kisah cinta manis, konflik realistis, dan perkembangan karakter di kkehidupan masa kini"
             },
             {
                 title: "Genre Sejarah",
-                description: "Serene waters mirroring the surrounding landscape"
+                description: "Drama yang berfokus pada kehidupan istana, konflik dinasti, perebutan takhta, dan romansa kolosal"
             },
             {
                 title: "Genre Sekolah/Remaja",
-                description: "Golden hour over endless ocean waves"
+                description: "Serial romansa-komedi yang berfokus pada kehidupan siswa SMA/universitas, persahabatan, cinta pertama, dan perjuangan akademik"
             },
             {
                 title: "Genre E-Sport",
-                description: "Rolling sand dunes under vast blue skies"
+                description: "Drama yang berfokus pada dunia kompetitif game online"
             },
             {
                 title: "Genre Era Republik",
-                description: "Countless stars illuminating the dark sky"
+                description: "Serial yang berlatar belakang sejarah Tiongkok antara tahun 1912-1949"
             },
             {
                 title: "Genre Xianxia",
-                description: "Cascading water through lush green forest"
+                description: "Drama fantasi kultivasi atau drama dewa-dewi Tiongkok"
             }
         ];
 
