@@ -52,23 +52,23 @@ https://templatemo.com/tm-595-3d-coverflow
                 description: "A winding trail through ancient woodland"
             },
             {
-                title: "Lake Reflection",
+                title: "Genre Sejarah",
                 description: "Serene waters mirroring the surrounding landscape"
             },
             {
-                title: "Ocean Sunset",
+                title: "Genre Sekolah/Remaja",
                 description: "Golden hour over endless ocean waves"
             },
             {
-                title: "Desert Dunes",
+                title: "Genre E-Sport",
                 description: "Rolling sand dunes under vast blue skies"
             },
             {
-                title: "Starry Night",
+                title: "Genre Era Republik",
                 description: "Countless stars illuminating the dark sky"
             },
             {
-                title: "Waterfall",
+                title: "Genre Xianxia",
                 description: "Cascading water through lush green forest"
             }
         ];
