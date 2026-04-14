@@ -48,7 +48,7 @@ https://templatemo.com/tm-595-3d-coverflow
                 description: "Drama yang berfokus pada seni bela diri"
             },
             {
-                title: "Forest Path",
+                title: "Genre Romansa Modern",
                 description: "A winding trail through ancient woodland"
             },
             {
