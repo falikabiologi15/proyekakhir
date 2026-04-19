@@ -1,6 +1,4 @@
 /*
-/* Letakkan di bagian paling atas file CSS */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap');
 
 TemplateMo 595 3d coverflow
 
@@ -98,33 +96,19 @@ https://templatemo.com/tm-595-3d-coverflow
             height: 100%;
         }
 
-        /* --- Bagian Logo Teks yang Diubah --- */
-.logo-text {
-    /* 1. Ganti Font menjadi Cinzel */
-    font-family: 'Cinzel', serif; 
-    font-size: 26px; /* Sedikit disesuaikan ukurannya */
-    font-weight: 800; /* Lebih tebal agar gradien terlihat jelas */
-    letter-spacing: 1px; /* Jarak antar huruf sedikit dilebarkan */
-    text-transform: uppercase; /* Membuat semua huruf kapital (opsional, cocok untuk Cinzel) */
+     .logo-text {
+    /* Pakai 'Times New Roman' atau 'Georgia' untuk kesan klasik/mahal secara offline */
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
 
-    /* 2. Membuat Warna Kuning Emas Bermilau (Gradien) */
-    background: linear-gradient(
-        135deg, 
-        #fbf5b7 0%,   /* Emas sangat terang (kilauan) */
-        #fce38a 25%,  /* Emas terang */
-        #eec22f 50%,  /* Emas medium */
-        #cc9b22 75%,  /* Emas tua */
-        #b8860b 100%  /* Emas gelap (bayangan) */
-    );
-    
-    /* Teknik agar gradien masuk ke dalam teks */
+    /* Efek Emas (Ini tetap jalan tanpa internet karena cuma kode warna) */
+    background: linear-gradient(135deg, #fbf5b7 0%, #eec22f 50%, #b8860b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent; /* Fallback jika browser tidak mendukung */
-
-    /* 3. Menambahkan Efek Kilau 3D Sederhana */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    display: inline-block; /* Penting agar efek gradien muncul */
+}
     
     transition: all 0.3s ease;
 }
