@@ -377,45 +377,32 @@ https://templatemo.com/tm-595-3d-coverflow
             event.target.reset();
         }
 
-// 1. DAFTAR DATA DRAMA (Tambahkan di sini saja kalau mau nambah)
-const dataDrama = [
-    { judul: "Hidden Love", img: "https://brushinguponchinese.com/wp-content/uploads/2023/07/Hidden-Love-poster-2.jpg" },
-    { judul: "Who Rules The World", img: "https://i.pinimg.com/736x/32/3d/8c/323d8c199516666870d1e2e9206b02a2.jpg" },
-    { judul: "Lighter & Princess", img: "https://i.pinimg.com/736x/8a/7b/7e/8a7b7e0f9b335e39b999df5e954e7f3b.jpg" },
-    { judul: "The Untamed", img: "https://i.pinimg.com/originals/11/4a/77/114a778e38d74e891336e1c25141e69d.jpg" },
-    { judul: "Love Like The Galaxy", img: "https://i.pinimg.com/736x/e4/16/00/e4160037a5e0766a505b33a04944415f.jpg" }
-];
+const slider = document.getElementById('categorySlider');
+let isDown = false;
+let startX;
+let scrollLeft;
 
-// 2. FUNGSI UNTUK MEMUNCULKAN KE HTML
-const kontainer = document.getElementById('daftar-drama');
-
-dataDrama.forEach(item => {
-    kontainer.innerHTML += `
-        <div class="swiper-slide">
-            <img src="${item.img}" alt="${item.judul}">
-            <div class="slide-info">
-                <h3>${item.judul}</h3>
-            </div>
-        </div>
-    `;
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.style.cursor = 'grabbing';
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
 });
 
-// 3. JALANKAN SWIPER COVERFLOW
-var swiper = new Swiper(".mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    loop: true,
-    coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 200,
-        modifier: 1,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // Angka 2 adalah kecepatan geser
+    slider.scrollLeft = scrollLeft - walk;
 });
