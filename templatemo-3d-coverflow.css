@@ -390,61 +390,77 @@ https://templatemo.com/tm-595-3d-coverflow
         }
 
         /* About Section */
- /* Dasar Body */
-body {
-    background-color: #121212; /* Warna gelap seperti di foto */
-    color: white;
-    font-family: sans-serif;
+ /* Container Tengah */
+.category-section {
+    padding: 60px 20px;
+    background: #fdfcfb;
+    text-align: center;
 }
 
-/* Judul Section */
-.spotlight h2 {
-    margin-left: 20px;
-    font-size: 24px;
+.category-header h2 {
+    color: #800000;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-/* Kontainer agar kartu berjajar ke samping */
-.card-container {
+/* Pengaturan Slider agar bisa digeser ke samping */
+.slider-container {
     display: flex;
-    gap: 20px; /* Jarak antar kartu */
-    padding: 20px;
-    overflow-x: auto; /* Agar bisa di-scroll jika layar kecil */
+    gap: 25px;
+    padding: 40px 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
+    cursor: grab;
 }
 
-/* Gaya Kartu Film */
-.movie-card {
-    width: 200px; /* Atur lebar kartu */
-    flex-shrink: 0;
+.slider-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar Chrome/Safari */
 }
 
-/* Poster Film */
-.poster img {
+/* Efek Kartu Mengambang */
+.drama-card {
+    min-width: 260px;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Bayangan awal tipis */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drama-card:hover {
+    transform: translateY(-20px); /* Efek melayang ke atas */
+    box-shadow: 0 25px 50px rgba(128, 0, 0, 0.15); /* Bayangan lebih dalam */
+    border-color: #d4af37;
+}
+
+.floating-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.drama-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.drama-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.explore-btn {
+    font-weight: bold;
+    color: #800000;
+    font-size: 0.85rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
     width: 100%;
-    border-radius: 10px; /* Sudut melengkung */
-    object-fit: cover;
-    height: 300px;
-    transition: transform 0.3s; /* Efek halus saat di-hover */
-}
-
-.poster img:hover {
-    transform: scale(1.05); /* Gambar membesar sedikit saat disentuh mouse */
-}
-
-/* Teks Info */
-.info h3 {
-    font-size: 18px;
-    margin: 10px 0 5px 0;
-}
-
-.rating {
-    font-size: 12px;
-    color: #bbb;
-    display: flex;
-    justify-content: space-between;
-}
-
-.stars {
-    color: #f1c40f; /* Warna kuning bintang */
 }
 
         /* Contact Section */
