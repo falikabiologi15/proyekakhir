@@ -377,50 +377,45 @@ https://templatemo.com/tm-595-3d-coverflow
             event.target.reset();
         }
 
-function openModal(title, rating, cast, desc) {
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalRating').innerText = rating;
-    document.getElementById('modalCast').innerText = cast;
-    document.getElementById('modalDesc').innerText = desc;
-    document.getElementById('dramaModal').style.display = "block";
-}
+// 1. DAFTAR DATA DRAMA (Tambahkan di sini saja kalau mau nambah)
+const dataDrama = [
+    { judul: "Hidden Love", img: "https://brushinguponchinese.com/wp-content/uploads/2023/07/Hidden-Love-poster-2.jpg" },
+    { judul: "Who Rules The World", img: "https://i.pinimg.com/736x/32/3d/8c/323d8c199516666870d1e2e9206b02a2.jpg" },
+    { judul: "Lighter & Princess", img: "https://i.pinimg.com/736x/8a/7b/7e/8a7b7e0f9b335e39b999df5e954e7f3b.jpg" },
+    { judul: "The Untamed", img: "https://i.pinimg.com/originals/11/4a/77/114a778e38d74e891336e1c25141e69d.jpg" },
+    { judul: "Love Like The Galaxy", img: "https://i.pinimg.com/736x/e4/16/00/e4160037a5e0766a505b33a04944415f.jpg" }
+];
 
-function closeModal() {
-    document.getElementById('dramaModal').style.display = "none";
-}
+// 2. FUNGSI UNTUK MEMUNCULKAN KE HTML
+const kontainer = document.getElementById('daftar-drama');
 
-window.onclick = function(event) {
-    let modal = document.getElementById('dramaModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-/* Kode untuk menjalankan efek Coverflow Swiper */
-var swiper = new Swiper(".mySwiper", {
-  effect: "coverflow",
-  grabCursor: true,      // Kursor jadi tangan saat diarahkan ke gambar
-  centeredSlides: true,  // Gambar aktif selalu di tengah
-  slidesPerView: "auto", // Jumlah slide menyesuaikan lebar layar
-  loop: true,            // Bisa digeser terus menerus tanpa putus
-  coverflowEffect: {
-    rotate: 30,          // Tingkat kemiringan gambar di samping (derajat)
-    stretch: 0,          // Jarak antar gambar
-    depth: 200,          // Kedalaman efek 3D (makin besar makin jauh di belakang)
-    modifier: 1,         // Intensitas efek
-    slideShadows: true,  // Bayangan pada gambar samping agar realistis
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,     // Titik-titik di bawah bisa diklik
-  },
-  // Opsional: Agar bisa geser otomatis
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+dataDrama.forEach(item => {
+    kontainer.innerHTML += `
+        <div class="swiper-slide">
+            <img src="${item.img}" alt="${item.judul}">
+            <div class="slide-info">
+                <h3>${item.judul}</h3>
+            </div>
+        </div>
+    `;
 });
-        // Initialize
-        updateCoverflow();
-        container.focus();
-        startAutoplay();
+
+// 3. JALANKAN SWIPER COVERFLOW
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
