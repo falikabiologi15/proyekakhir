@@ -395,6 +395,31 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+/* Kode untuk menjalankan efek Coverflow Swiper */
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,      // Kursor jadi tangan saat diarahkan ke gambar
+  centeredSlides: true,  // Gambar aktif selalu di tengah
+  slidesPerView: "auto", // Jumlah slide menyesuaikan lebar layar
+  loop: true,            // Bisa digeser terus menerus tanpa putus
+  coverflowEffect: {
+    rotate: 30,          // Tingkat kemiringan gambar di samping (derajat)
+    stretch: 0,          // Jarak antar gambar
+    depth: 200,          // Kedalaman efek 3D (makin besar makin jauh di belakang)
+    modifier: 1,         // Intensitas efek
+    slideShadows: true,  // Bayangan pada gambar samping agar realistis
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,     // Titik-titik di bawah bisa diklik
+  },
+  // Opsional: Agar bisa geser otomatis
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
         // Initialize
         updateCoverflow();
         container.focus();
