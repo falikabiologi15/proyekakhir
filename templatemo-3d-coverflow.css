@@ -393,7 +393,7 @@ https://templatemo.com/tm-595-3d-coverflow
  /* Container Tengah */
 .category-section {
     padding: 60px 20px;
-    background: #fdfcfb;
+    background:#000000;
     text-align: center;
 }
 
@@ -421,7 +421,7 @@ https://templatemo.com/tm-595-3d-coverflow
 /* Efek Kartu Mengambang */
 .drama-card {
     min-width: 260px;
-    background: #ffffff;
+    background: #f4eee1;
     padding: 30px 20px;
     border-radius: 20px;
     border: 1px solid #eee;
@@ -1099,6 +1099,9 @@ https://templatemo.com/tm-595-3d-coverflow
             }
         }
 
+html {
+    scroll-behavior: smooth;
+}
 .navbar ul {
     list-style: none; /* Menghilangkan titik-titik bullet */
     display: flex;    /* Membuat menu berjajar ke samping */
