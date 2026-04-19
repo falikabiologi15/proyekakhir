@@ -1098,3 +1098,23 @@ https://templatemo.com/tm-595-3d-coverflow
                 border-radius: 25px;
             }
         }
+
+.navbar ul {
+    list-style: none; /* Menghilangkan titik-titik bullet */
+    display: flex;    /* Membuat menu berjajar ke samping */
+    justify-content: center; 
+    gap: 30px;        /* Jarak antar menu */
+    margin-top: 20px;
+}
+
+.navbar a {
+    text-decoration: none; /* Menghilangkan garis bawah biru */
+    color: #d4af37;        /* Warna emas sesuai tema */
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: white;          /* Warna berubah saat kursor di atasnya */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
