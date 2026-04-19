@@ -406,3 +406,37 @@ slider.addEventListener('mousemove', (e) => {
     const walk = (x - startX) * 2; // Angka 2 adalah kecepatan geser
     slider.scrollLeft = scrollLeft - walk;
 });
+
+// Memilih semua kartu yang punya class .card-3d
+const cards = document.querySelectorAll('.card-inner');
+
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        // Mendapatkan posisi mouse relatif terhadap kartu
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; 
+        const y = e.clientY - rect.top;
+
+        // Mencari titik tengah kartu
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Menghitung derajat kemiringan (max 15 derajat)
+        const rotateX = ((y - centerY) / centerY) * -15;
+        const rotateY = ((x - centerX) / centerX) * 15;
+
+        // Menerapkan transformasi 3D
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    // Mengembalikan posisi kartu saat mouse keluar
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        card.style.transition = 'transform 0.5s ease';
+    });
+
+    // Menghapus transisi saat mouse masuk agar gerakan terasa responsif
+    card.addEventListener('mouseenter', () => {
+        card.style.transition = 'none';
+    });
+});
