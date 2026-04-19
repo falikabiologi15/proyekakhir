@@ -405,17 +405,13 @@ https://templatemo.com/tm-595-3d-coverflow
 
 /* Pengaturan Slider agar bisa digeser ke samping */
 .slider-container {
-    display: flex;
-    gap: 25px;
-    padding: 40px 10px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
-    cursor: grab;
-}
-
-.slider-container::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+    display: flex;            /* INI KUNCINYA: Membuat isi berjejer ke samping */
+    justify-content: center;   /* Membuat semua kartu kumpul di tengah */
+    align-items: center;       /* Rata tengah secara vertikal */
+    flex-wrap: wrap;           /* SUPAYA: Kalau layar HP sempit, kartu otomatis turun ke bawah (nggak kepotong) */
+    gap: 30px;                 /* Memberi jarak antar kartu kategori */
+    padding: 50px 20px;
+    width: 100%;
 }
 
 /* Efek Kartu Mengambang */
