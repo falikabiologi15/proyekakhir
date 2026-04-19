@@ -403,35 +403,50 @@ https://templatemo.com/tm-595-3d-coverflow
     margin-bottom: 10px;
 }
 
-/* Pengaturan Slider agar bisa digeser ke samping */
+/* Container pembungkus utama */
 .slider-container {
-    display: flex;            /* INI KUNCINYA: Membuat isi berjejer ke samping */
-    justify-content: center;   /* Membuat semua kartu kumpul di tengah */
-    align-items: center;       /* Rata tengah secara vertikal */
-    flex-wrap: wrap;           /* SUPAYA: Kalau layar HP sempit, kartu otomatis turun ke bawah (nggak kepotong) */
-    gap: 30px;                 /* Memberi jarak antar kartu kategori */
-    padding: 50px 20px;
-    width: 100%;
+    display: grid; 
+    /* Kode di bawah ini artinya: Buat kolom sebanyak 5 baris yang lebarnya sama (1fr) */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;            /* Jarak antar kartu */
+    padding: 40px;
+    max-width: 1200px;    /* Batas lebar maksimal biar gak terlalu lebar di monitor gede */
+    margin: 0 auto;       /* Membuat container di tengah-tengah layar */
 }
 
-/* Efek Kartu Mengambang */
+/* Supaya di HP tidak hancur (Otomatis jadi menurun kalau layar sempit) */
+@media (max-width: 1024px) {
+    .slider-container {
+        grid-template-columns: repeat(3, 1fr); /* Di tablet jadi 3 kolom */
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        grid-template-columns: repeat(1, 1fr); /* Di HP jadi 1 kolom (menurun) */
+    }
+}
+
+/* Menangani tag <a> agar ukurannya mengikuti kartu */
+.slider-container a {
+    text-decoration: none;
+    display: block; /* Penting! Supaya link membungkus seluruh kartu */
+}
+
+/* Desain kartu kategorinya */
 .drama-card {
-    min-width: 260px;
-    background: #f4eee1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #d4af37;
+    border-radius: 15px;
     padding: 30px 20px;
-    border-radius: 20px;
-    border: 1px solid #eee;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Bayangan awal tipis */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    transition: 0.4s;
+    height: 100%; /* Supaya tinggi semua kartu sama */
 }
 
 .drama-card:hover {
-    transform: translateY(-20px); /* Efek melayang ke atas */
-    box-shadow: 0 25px 50px rgba(128, 0, 0, 0.15); /* Bayangan lebih dalam */
-    border-color: #d4af37;
+    background: #d4af37;
+    transform: translateY(-10px);
 }
 
 .floating-icon {
