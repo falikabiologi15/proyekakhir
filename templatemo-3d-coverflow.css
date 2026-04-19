@@ -424,6 +424,35 @@ https://templatemo.com/tm-595-3d-coverflow
     width: 30px;
 }
 
+/* --- KODE UNTUK SLIDER COVERFLOW --- */
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 280px;    /* Atur lebar kotak poster */
+    height: 400px;   /* Atur tinggi kotak poster */
+    border-radius: 15px; /* Biar ujungnya membulat rapi */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Bayangan biar efek 3D makin terasa */
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Penting! Biar gambar otomatis pas dengan kotak tanpa ketarik */
+}
+
+/* Warna titik-titik navigasi di bawah gambar */
+.swiper-pagination-bullet {
+    background: #eec22f; /* Warna emas biar nyambung sama logo kamu */
+}
 /* Tombol Genre */
 .genre-tags { display: flex; flex-wrap: wrap; gap: 10px; }
 .genre-btn {
