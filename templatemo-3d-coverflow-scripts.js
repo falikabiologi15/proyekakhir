@@ -377,6 +377,24 @@ https://templatemo.com/tm-595-3d-coverflow
             event.target.reset();
         }
 
+function openModal(title, rating, cast, desc) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalRating').innerText = rating;
+    document.getElementById('modalCast').innerText = cast;
+    document.getElementById('modalDesc').innerText = desc;
+    document.getElementById('dramaModal').style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('dramaModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById('dramaModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
         // Initialize
         updateCoverflow();
         container.focus();
