@@ -407,3 +407,38 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
+// Memilih semua kartu drama di halaman
+const cards = document.querySelectorAll('.card-inner');
+
+cards.forEach(card => {
+    // 1. Logika saat mouse bergerak di atas kartu
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        
+        // Menghitung posisi mouse relatif terhadap kartu
+        const x = e.clientX - rect.left; 
+        const y = e.clientY - rect.top;
+
+        // Mencari titik tengah kartu
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Menghitung derajat kemiringan (Max 15-20 derajat agar tidak terlalu miring)
+        const rotateX = ((y - centerY) / centerY) * -15;
+        const rotateY = ((x - centerX) / centerX) * 15;
+
+        // Menerapkan transformasi 3D ke kartu
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    // 2. Logika saat mouse keluar (Kartu kembali tegak)
+    card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 0.5s ease'; // Efek transisi halus saat kembali
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // 3. Logika saat mouse masuk (Menghapus transisi agar gerakan responsif/instan)
+    card.addEventListener('mouseenter', () => {
+        card.style.transition = 'none';
+    });
+});
