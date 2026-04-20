@@ -391,63 +391,41 @@ https://templatemo.com/tm-595-3d-coverflow
 		}
 		
 		
-		.slider-container {
-		    display: flex; 
-		    grid-template-columns: repeat(5, 1fr); 
-		    gap: 20px;            
-		    padding: 40px;
-		    max-width: 1200px;  
-		    margin: 0 auto;      
-		}
-		
-		@media (max-width: 1024px) {
-		    .slider-container {
-		        grid-template-columns: repeat(3, 1fr); 
-		    }
-		}
-		
-		@media (max-width: 768px) {
-		    .slider-container {
-		        grid-template-columns: repeat(1, 1fr);
-		    }
-		}
-		
-		.slider-container a {
-		    text-decoration: none;
-		    display: block;
-		}
-		
-		
-		.drama-card {
-		    background: rgba(255, 255, 255, 0.05);
-		    border: 1px solid #d4af37;
-		    border-radius: 15px;
-		    padding: 30px 20px;
-		    text-align: center;
-		    transition: 0.4s;
-		    height: 100%; 
-		}
-		
-		.drama-card:hover {
-		    background: #d4af37;
-		    transform: translateY(-10px);
-		}
-		
-		.floating-icon {
-		    font-size: 40px;
-		    margin-bottom: 15px;
-		}
-		
-		.drama-card h3 {
-		    color: #333;
-		    margin-bottom: 10px;
-		}
-		
-		.drama-card p {
-		    font-size: 0.9rem;
-		    color: #666;
-		    margin-bottom: 20px;
-		}
+
+.slider-container {
+    display: flex;          /* INI KUNCINYA: Membuat konten jadi baris */
+    flex-wrap: nowrap;      /* Mencegah kartu turun ke bawah */
+    gap: 20px;              /* Jarak antar kartu */
+    padding: 30px 10px;
+    overflow-x: auto;       /* Biar bisa digeser ke samping */
+    -webkit-overflow-scrolling: touch; /* Biar scroll di HP mulus */
+    scrollbar-width: none;  /* Sembunyikan scrollbar Firefox */
+}
+
+/* Biar scrollbar tidak muncul di Chrome/Safari */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Pengaturan Ukuran Kartu */
+.drama-card {
+    flex: 0 0 280px;        /* KUNCINYA: Lebar kartu fix 280px, jangan membesar/mengecil */
+    min-width: 280px;       /* Biar tidak gepeng */
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.drama-card:hover {
+    transform: translateY(-15px); /* Efek mengambang */
+    box-shadow: 0 20px 40px rgba(128, 0, 0, 0.15);
+    border-color: #d4af37;
+}
+
 		
 		.explore-btn {
 		    font-weight: bold;
