@@ -377,68 +377,62 @@ https://templatemo.com/tm-595-3d-coverflow
             event.target.reset();
         }
 
-const slider = document.getElementById('categorySlider');
-let isDown = false;
-let startX;
-let scrollLeft;
+        const slider = document.getElementById('categorySlider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.style.cursor = 'grabbing';
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
 
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.style.cursor = 'grab';
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.style.cursor = 'grab';
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // Angka 2 adalah kecepatan geser
-    slider.scrollLeft = scrollLeft - walk;
-});
-
-// Memilih semua kartu drama di halaman
-const cards = document.querySelectorAll('.card-inner');
-
-cards.forEach(card => {
-    // 1. Logika saat mouse bergerak di atas kartu
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
         
-        // Menghitung posisi mouse relatif terhadap kartu
-        const x = e.clientX - rect.left; 
-        const y = e.clientY - rect.top;
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+        });
+        
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; 
+            slider.scrollLeft = scrollLeft - walk;
+        });
+        
+        const cards = document.querySelectorAll('.card-inner');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                
+                const x = e.clientX - rect.left; 
+                const y = e.clientY - rect.top;
+        
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+        
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+        
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        
 
-        // Mencari titik tengah kartu
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+            card.addEventListener('mouseleave', () => {
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            });
+        
 
-        // Menghitung derajat kemiringan (Max 15-20 derajat agar tidak terlalu miring)
-        const rotateX = ((y - centerY) / centerY) * -15;
-        const rotateY = ((x - centerX) / centerX) * 15;
-
-        // Menerapkan transformasi 3D ke kartu
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    // 2. Logika saat mouse keluar (Kartu kembali tegak)
-    card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.5s ease'; // Efek transisi halus saat kembali
-        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-
-    // 3. Logika saat mouse masuk (Menghapus transisi agar gerakan responsif/instan)
-    card.addEventListener('mouseenter', () => {
-        card.style.transition = 'none';
-    });
-});
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'none';
+            });
+        });
