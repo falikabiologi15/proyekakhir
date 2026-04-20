@@ -26,7 +26,6 @@ https://templatemo.com/tm-595-3d-coverflow
             background: #000;
         }
 
-        /* Sections */
         .section {
             min-height: 100vh;
             position: relative;
@@ -47,7 +46,6 @@ https://templatemo.com/tm-595-3d-coverflow
             background: radial-gradient(ellipse at center, #1a1a2e 0%, #0f0f0f 100%);
         }
 
-        /* Header Styles */
         .header {
             position: fixed;
             top: 0;
@@ -96,21 +94,21 @@ https://templatemo.com/tm-595-3d-coverflow
             height: 100%;
         }
 
-     .logo-text {
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-
-    background: linear-gradient(135deg, #fbf5b7 0%, #eec22f 50%, #b8860b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block; /* Penting agar efek gradien muncul */
-}
-    
-    transition: all 0.3s ease;
-}
-        }
+		     .logo-text {
+		    font-family: 'Times New Roman', Times, serif; 
+		    font-size: 28px;
+		    font-weight: bold;
+		    text-transform: uppercase;
+		
+		    background: linear-gradient(135deg, #fbf5b7 0%, #eec22f 50%, #b8860b 100%);
+		    -webkit-background-clip: text;
+		    -webkit-text-fill-color: transparent;
+		    display: inline-block; 
+		}
+		    
+		    transition: all 0.3s ease;
+		}
+		        }
 
         .main-menu {
             display: flex;
@@ -127,78 +125,77 @@ https://templatemo.com/tm-595-3d-coverflow
             position: relative;
             padding: 8px 0;
         }
-
-       .menu-item:hover {
-    color: #fce38a; /* Ganti 'white' jadi emas muda */
-    transform: translateY(-2px);
-}
-
-       .menu-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    /* Ganti kode ungu (#667eea, #764ba2) jadi kode emas di bawah ini */
-    background: linear-gradient(90deg, #fce38a, #cc9b22); 
-    transition: width 0.3s ease;
-}
-
-        .menu-item:hover::after {
-            width: 100%;
-        }
-
-        .menu-item.active {
-            color: white;
-        }
-
-        .menu-item.active::after {
-            width: 100%;
-        }
-
-        .menu-item.external::before {
-            content: '↗';
-            margin-right: 5px;
-            font-size: 12px;
-            opacity: 0.7;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .coverflow-wrapper {
-            width: 100%;
-
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 80px;
-        }
-
-        .coverflow-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1200px;
-            position: relative;
-        }
+	
+		       .menu-item:hover {
+		    color: #fce38a; 
+		    transform: translateY(-2px);
+		}
+		
+		       .menu-item::after {
+		    content: '';
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    width: 0;
+		    height: 2px;
+		    background: linear-gradient(90deg, #fce38a, #cc9b22); 
+		    transition: width 0.3s ease;
+		}
+		
+	        .menu-item:hover::after {
+	            width: 100%;
+	        }
+	
+	        .menu-item.active {
+	            color: white;
+	        }
+	
+	        .menu-item.active::after {
+	            width: 100%;
+	        }
+	
+	        .menu-item.external::before {
+	            content: '↗';
+	            margin-right: 5px;
+	            font-size: 12px;
+	            opacity: 0.7;
+	        }
+	
+	        .menu-toggle {
+	            display: none;
+	            flex-direction: column;
+	            cursor: pointer;
+	            padding: 4px;
+	        }
+	
+	        .menu-toggle span {
+	            width: 25px;
+	            height: 3px;
+	            background: white;
+	            margin: 3px 0;
+	            transition: 0.3s;
+	            border-radius: 2px;
+	        }
+	
+	        .coverflow-wrapper {
+	            width: 100%;
+	
+	            height: 100vh;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	            padding-top: 80px;
+	        }
+	
+	        .coverflow-container {
+	            width: 100%;
+	            height: 100%;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	            perspective: 1200px;
+	            position: relative;
+	        }
 
         .coverflow {
             display: flex;
@@ -381,85 +378,85 @@ https://templatemo.com/tm-595-3d-coverflow
         }
 
        
-.category-section {
-    padding: 60px 20px;
-    background:#000000;
-    text-align: center;
-}
-
-.category-header h2 {
-    color: #800000;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-
-.slider-container {
-    display: grid; 
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 20px;            
-    padding: 40px;
-    max-width: 1200px;  
-    margin: 0 auto;      
-}
-
-@media (max-width: 1024px) {
-    .slider-container {
-        grid-template-columns: repeat(3, 1fr); 
-    }
-}
-
-@media (max-width: 768px) {
-    .slider-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.slider-container a {
-    text-decoration: none;
-    display: block;
-}
-
-
-.drama-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #d4af37;
-    border-radius: 15px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: 0.4s;
-    height: 100%; 
-}
-
-.drama-card:hover {
-    background: #d4af37;
-    transform: translateY(-10px);
-}
-
-.floating-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.drama-card h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.drama-card p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.explore-btn {
-    font-weight: bold;
-    color: #800000;
-    font-size: 0.85rem;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-    width: 100%;
-}
+		.category-section {
+		    padding: 60px 20px;
+		    background:#000000;
+		    text-align: center;
+		}
+		
+		.category-header h2 {
+		    color: #800000;
+		    font-size: 2rem;
+		    margin-bottom: 10px;
+		}
+		
+		
+		.slider-container {
+		    display: flex; 
+		    grid-template-columns: repeat(5, 1fr); 
+		    gap: 20px;            
+		    padding: 40px;
+		    max-width: 1200px;  
+		    margin: 0 auto;      
+		}
+		
+		@media (max-width: 1024px) {
+		    .slider-container {
+		        grid-template-columns: repeat(3, 1fr); 
+		    }
+		}
+		
+		@media (max-width: 768px) {
+		    .slider-container {
+		        grid-template-columns: repeat(1, 1fr);
+		    }
+		}
+		
+		.slider-container a {
+		    text-decoration: none;
+		    display: block;
+		}
+		
+		
+		.drama-card {
+		    background: rgba(255, 255, 255, 0.05);
+		    border: 1px solid #d4af37;
+		    border-radius: 15px;
+		    padding: 30px 20px;
+		    text-align: center;
+		    transition: 0.4s;
+		    height: 100%; 
+		}
+		
+		.drama-card:hover {
+		    background: #d4af37;
+		    transform: translateY(-10px);
+		}
+		
+		.floating-icon {
+		    font-size: 40px;
+		    margin-bottom: 15px;
+		}
+		
+		.drama-card h3 {
+		    color: #333;
+		    margin-bottom: 10px;
+		}
+		
+		.drama-card p {
+		    font-size: 0.9rem;
+		    color: #666;
+		    margin-bottom: 20px;
+		}
+		
+		.explore-btn {
+		    font-weight: bold;
+		    color: #800000;
+		    font-size: 0.85rem;
+		    border-top: 1px solid #eee;
+		    padding-top: 10px;
+		    width: 100%;
+		}
 
     
         .contact-content {
